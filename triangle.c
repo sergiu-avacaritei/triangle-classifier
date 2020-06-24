@@ -32,7 +32,7 @@ int convert(const char length[]) {
     return -1;
 }
 
-// Classify a triangle, given side lengths as strings:
+// Classify a triangle, given side lengths as integers:
 int triangle(int a, int b, int c) {
     long A = a; long B = b; long C = c;
     sort(&A, &B, &C);
@@ -67,8 +67,7 @@ void assert(int line, bool b) {
     exit(1);
 }
 
-// Check that you haven't changed the triangle type constants.  (If you do, it
-// spoils automatic marking, when your program is linked with a test program.)
+// Check triangle type rconstants.
 void checkConstants() {
     assert(__LINE__, Equilateral==0 && Isosceles==1 && Right==2 && Scalene==3);
     assert(__LINE__, Flat==4 && Impossible==5 && Illegal==6);
